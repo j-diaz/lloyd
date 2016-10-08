@@ -19,7 +19,7 @@ public class Lloyd extends TweetRecommender implements Bot {
     private Logger logger = LoggerFactory.getLogger(Lloyd.class);
 
     private static final long MAX_EMIT_SLEEP_TIME    = 1800000; // 30min
-    private static final long MIN_EMIT_SLEEP_TIME    = 900000;  // 15min
+    private static final long MIN_EMIT_SLEEP_TIME    = 900000;  //15min
     private static Random random = new Random();
 
     public Lloyd() throws IOException {
@@ -35,19 +35,21 @@ public class Lloyd extends TweetRecommender implements Bot {
     public void emit() {
         Thread thread = new Thread(() -> {
             Twitter twitter = TwitterFactory.getSingleton();
-            try {
-                while(true){
-                    long tweetAfterMillis = random.nextInt( (int) ((MAX_EMIT_SLEEP_TIME - MIN_EMIT_SLEEP_TIME) + 1)) + MIN_EMIT_SLEEP_TIME ;
-                    logger.info("Emitter going to sleep for " +  (tweetAfterMillis / 60000)  + "min");
+            while(true) {
+                long tweetAfterMillis = random.nextInt((int) ((MAX_EMIT_SLEEP_TIME - MIN_EMIT_SLEEP_TIME) + 1)) + MIN_EMIT_SLEEP_TIME;
+                logger.info("Emitter going to sleep for " + (tweetAfterMillis / 60000) + "min");
+                try {
                     Thread.sleep(tweetAfterMillis);
-                    String tweetText = super.getRecommendation();
-                    logger.info("Emitter tweet update: "+tweetText);
-                    Status status = twitter.updateStatus(tweetText);
+                } catch (InterruptedException e) {
+                    logger.error(e.getMessage());
                 }
-            } catch (TwitterException e) {
-                logger.error(e.getMessage());
-            } catch (InterruptedException e) {
-                logger.error(e.getMessage());
+                String tweetText = super.getRecommendation();
+                logger.info("Emitter tweet update: " + tweetText);
+                try {
+                    Status status = twitter.updateStatus(tweetText);
+                } catch (TwitterException e) {
+                    logger.error(e.getMessage());
+                }
             }
         });
 

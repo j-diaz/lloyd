@@ -10,7 +10,9 @@ gradle-app.setting
 .target
 .project
 
+# Lloyd specific
 *database.properties*
+*lloyd.out*
 
 #ant specific
 dist/

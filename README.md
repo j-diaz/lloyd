@@ -33,6 +33,19 @@ oauth.accessToken=**************************************************
 oauth.accessTokenSecret=******************************************
 ```
 
+Additionally, for postgres you need a file named ```database.properties``` in the lloyd-collector project's resource directory.
+```
+dataSourceClassName=org.postgresql.ds.PGSimpleDataSource
+dataSource.user=myuser
+dataSource.password=mypassword
+dataSource.databaseName=mydb
+dataSource.portNumber=5432
+dataSource.serverName=localhost
+```
+
+See HikariCP or [Any Backend](https://github.com/j-diaz/any-backend) library for details of the JDBC abstraction layer and other databases.
+
+
 ##Architecture
 ![lloyd design](architecture/architecture.png)
 
