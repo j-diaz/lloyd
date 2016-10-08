@@ -1,0 +1,19 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.3"
+    }
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
+
+mainClassName = 'com.lloyd.core.Lloyd'
+
+dependencies {
+
+    compile project(':lloyd-collector')
+
+    compile 'args4j:args4j:2.33'
+}

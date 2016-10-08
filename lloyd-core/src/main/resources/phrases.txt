@@ -1,0 +1,9 @@
+Phrases
+========
+
+I'm just going to leave this over here... <link> 
+Listen! <text>
+Seems like you should see this: <link>
+Fact: <text>
+I found this interesting tweet! <text>
+I think you might like this: <link>

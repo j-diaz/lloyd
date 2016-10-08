@@ -1,0 +1,51 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Gradle template
+.gradle
+build/
+*twitter4j.properties*
+# Ignore Gradle GUI config
+gradle-app.setting
+.classpath
+.settings
+.target
+.project
+
+
+#ant specific
+dist/
+build/
+
+#netbeans specific
+#core
+nbproject/*
+!nbproject/project.properties
+!nbproject/project.xml
+
+#java specific
+*.class
+
+#general swap/backup files
+*.so
+*.log
+*.out
+*~
+*.swp
+*.DS_Store
+*.lock
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+.idea
+
+#lloyd-collector/src/test/
+#lloyd-core/src/main/
+#lloyd-core/src/test/
+#lloyd-twitter/src/test/
+
+*.~lock.*

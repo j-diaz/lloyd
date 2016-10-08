@@ -1,0 +1,10 @@
+rootProject.name = 'lloyd'
+
+include 'lloyd-collector'
+
+include 'lloyd-analytics'
+
+include 'lloyd-core'
+
+
+
