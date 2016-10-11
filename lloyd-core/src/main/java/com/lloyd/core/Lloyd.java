@@ -36,8 +36,8 @@ public class Lloyd extends TweetRecommender implements Bot {
         Thread thread = new Thread(() -> {
             Twitter twitter = TwitterFactory.getSingleton();
             while(true) {
-                long tweetAfterMillis = random.nextInt((int) ((MAX_EMIT_SLEEP_TIME - MIN_EMIT_SLEEP_TIME) + 1)) + MIN_EMIT_SLEEP_TIME;
-                logger.info("Emitter going to sleep for " + (tweetAfterMillis / 60000) + "min");
+                long tweetAfterMillis = random.nextInt((int) ((MAX_EMIT_SLEEP_TIME - MIN_EMIT_SLEEP_TIME) + 1)) + MIN_EMIT_SLEEP_TIME * (random.nextInt(4) + 1);
+                logger.info("Emitter going to sleep for " +  (tweetAfterMillis / 60000)+ "min");
                 try {
                     Thread.sleep(tweetAfterMillis);
                 } catch (InterruptedException e) {
