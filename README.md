@@ -10,16 +10,16 @@ A twitterbot that recommends interesting tweets.
 Follow [Lloyd](https://twitter.com/lloydbotv1) on twitter!
 
 
-##Goals
+## Goals
 * Recommend interesting tweets.
 * Learn from user feedback regarding interesting tweets and improve suggestions.
 * Listen on the twitter streams for interesting tweets, and publish @mention them to the most likely follower to enjoy that tweet. 
 * Provide a dashboard to showcase lloyd's statistics
 
-##How to run?
+## How to run?
 Clone this repository and follow the below sections.
 
-####Configuration
+#### Configuration
 
 * OpenJDK 8 / OracleJDK 8 minimum in ```PATH``` required
 
@@ -46,10 +46,10 @@ dataSource.serverName=localhost
 See HikariCP or [Any Backend](https://github.com/j-diaz/any-backend) library for details of the JDBC abstraction layer and other databases.
 
 
-##Architecture
+## Architecture
 ![lloyd design](architecture/architecture.png)
 
-##How to contribute?
+## How to contribute?
 Find this project interesting? 
 
 Eager to learn the following technologies? - Maybe already know them?
